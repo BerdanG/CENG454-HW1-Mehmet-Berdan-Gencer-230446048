@@ -30,11 +30,11 @@ public class FlightController : MonoBehaviour
     }
 
 
-     private void HandleRotation()
+    private void HandleRotation()
     {
-    // TODO (Task 3-C):
-    // Pitch
-    // Roll
+    float pitchInput = Input.GetAxis("Vertical");
+    float pitchAmount = pitchInput * pitchSpeed * Time.deltaTime;
+    transform.Rotate(Vector3.right * pitchAmount);
     }
  
  
