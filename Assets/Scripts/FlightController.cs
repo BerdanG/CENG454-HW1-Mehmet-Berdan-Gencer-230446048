@@ -35,11 +35,17 @@ public class FlightController : MonoBehaviour
     float pitchInput = Input.GetAxis("Vertical");
     float yawInput   = Input.GetAxis("Horizontal");
 
+    float rollInput = 0f;
+    if (Input.GetKey(KeyCode.Q)) rollInput = 1f;
+    if (Input.GetKey(KeyCode.E)) rollInput = -1f;
+
     float pitchAmount = pitchInput * pitchSpeed * Time.deltaTime;
     float yawAmount   = yawInput   * yawSpeed   * Time.deltaTime;
+    float rollAmount  = rollInput  * rollSpeed  * Time.deltaTime;
 
     transform.Rotate(Vector3.right * pitchAmount);
     transform.Rotate(Vector3.up    * yawAmount);
+    transform.Rotate(Vector3.forward * rollAmount);
     }
  
  
