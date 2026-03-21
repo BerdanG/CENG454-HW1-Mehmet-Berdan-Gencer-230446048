@@ -2,9 +2,10 @@
 // CENG 454 – HW1: Sky-High Prototype
 // Author: Mehmet Berdan Gençer | Student ID: 230446048
 
-
 using UnityEditor.Callbacks;
 using UnityEngine;
+
+
 public class FlightController : MonoBehaviour
 {
     [SerializeField] private float pitchSpeed = 45f; // degrees/second
@@ -17,13 +18,12 @@ public class FlightController : MonoBehaviour
     
     void Start()
     {
-    // Why is freezeRotation needed? Answer in your PDF.
     rb = GetComponent<Rigidbody>();
     rb.freezeRotation = true;
     }
  
 
-    void Update()// or FixedUpdate()
+    void Update()
     {
     HandleRotation();
     HandleThrust();
