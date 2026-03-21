@@ -33,8 +33,13 @@ public class FlightController : MonoBehaviour
     private void HandleRotation()
     {
     float pitchInput = Input.GetAxis("Vertical");
+    float yawInput   = Input.GetAxis("Horizontal");
+
     float pitchAmount = pitchInput * pitchSpeed * Time.deltaTime;
+    float yawAmount   = yawInput   * yawSpeed   * Time.deltaTime;
+
     transform.Rotate(Vector3.right * pitchAmount);
+    transform.Rotate(Vector3.up    * yawAmount);
     }
  
  
